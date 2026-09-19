@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life & Job</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">LIFE & JOB</div>
+
+        <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#fitness">FITNESS</a></li>
+            <li><a href="#model">MODEL</a></li>
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#experiences">LIFE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+
+            <h1>LIFE & JOB</h1>
+
+            <div class="categories">
+                <p>FITNESS</p>
+                <p>MODEL</p>
+                <p>WORK</p>
+                <p>LIFE</p>
+            </div>
+
+            <span class="subtitle">
+                Building myself every day.
+            </span>
+
+            <div class="scroll">
+                SCROLL ↓
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+
+        <h2>ABOUT ME</h2>
+
+        <p>
+            No creo en encasillarme en una sola cosa.
+            Este espacio reúne mi evolución en el fitness,
+            el trabajo, el modelaje y los proyectos personales.
+            Life & Job es un diario visual de crecimiento,
+            disciplina y experiencias.
+        </p>
+
+    </section>
+
+    <!-- FITNESS -->
+
+    <section id="fitness" class="fitness">
+
+        <h2>FITNESS</h2>
+
+        <img src="fitness.JPG" alt="Fitness" class="fitness-photo">
+
+        <div class="stats">
+
+            <div class="stat">
+                <span>1.78m</span>
+                <p>HEIGHT</p>
+            </div>
+
+            <div class="stat">
+                <span>70kg</span>
+                <p>CURRENT</p>
+            </div>
+
+            <div class="stat">
+                <span>75kg</span>
+                <p>GOAL</p>
+            </div>
+
+        </div>
+
+        <p>
+            Disciplina, constancia y progreso.
+            El fitness forma parte de mi estilo de vida y de mi desarrollo personal.
+            Mi objetivo actual es alcanzar los 75 kg manteniendo una estética equilibrada,
+            funcional y atlética.
+        </p>
+
+    </section>
+
+    <!-- MODEL -->
+
+    <section id="model" class="model">
+
+        <h2>MODEL</h2>
+
+        <div class="gallery">
+
+            <img src="model1.jpg" alt="Model">
+            <img src="model2.jpg" alt="Model">
+            <img src="model3.jpg" alt="Model">
+            <img src="model4.jpg" alt="Model">
+            <img src="model5.jpg" alt="Model">
+            <img src="model6.jpg" alt="Model">
+
+        </div>
+
+    </section>
+
+    <!-- WORK -->
+
+    <section id="work" class="work">
+
+        <h2>WORK</h2>
+
+        <p>
+            Logística, administración, deporte y experiencias profesionales que han marcado mi camino.
+        </p>
+
+    </section>
+
+    <!-- EXPERIENCES -->
+
+    <section id="experiences" class="experiences">
+
+        <h2>EXPERIENCES</h2>
+
+        <div class="stories">
+
+            <div class="story">
+                <div class="story-circle"></div>
+                <span>FITNESS</span>
+            </div>
+
+            <div class="story">
+                <div class="story-circle"></div>
+                <span>MODEL</span>
+            </div>
+
+            <div class="story">
+                <div class="story-circle"></div>
+                <span>WORK</span>
+            </div>
+
+            <div class="story">
+                <div class="story-circle"></div>
+                <span>TRAVEL</span>
+            </div>
+
+            <div class="story">
+                <div class="story-circle"></div>
+                <span>LIFE</span>
+            </div>
+
+            <div class="story">
+                <div class="story-circle"></div>
+                <span>GOALS</span>
+            </div>
+
+        </div>
+
+        <div class="feed">
+
+            <article class="post">
+
+                <div class="post-image"></div>
+
+                <div class="post-content">
+                    <h3>PRIMERA EXPERIENCIA</h3>
+
+                    <p>Fecha · Categoría</p>
+
+                    <p>
+                        Aquí podrás añadir una experiencia,
+                        imágenes, vídeos o cualquier historia
+                        importante de tu evolución personal.
+                    </p>
+                </div>
+
+            </article>
+
+            <article class="post">
+
+                <div class="post-image"></div>
+
+                <div class="post-content">
+                    <h3>SEGUNDA EXPERIENCIA</h3>
+
+                    <p>Fecha · Categoría</p>
+
+                    <p>
+                        Espacio preparado para futuras publicaciones.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <h2>CONTACT</h2>
+
+        <p>
+            Instagram · GitHub · LinkedIn
+        </p>
+
+    </section>
+
+    <!-- LIGHTBOX -->
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close');
+
+        galleryImages.forEach(img => {
+
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+            });
+
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+
+            if(e.target === lightbox){
+                lightbox.style.display = 'none';
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
